@@ -1,9 +1,9 @@
 .logo_menu img {
     width: 11em;
-    padding: 15px 0px 15px 150px;
+    
 }
 
-.topo {
+.top {
     /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#4dd2d2+0,092331+100 */
     background: #4dd2d2; /* Old browsers */
     background: -moz-linear-gradient(left,  #4dd2d2 0%, #092331 100%); /* FF3.6-15 */
@@ -12,10 +12,15 @@
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#4dd2d2', endColorstr='#092331',GradientType=1 ); /* IE6-9 */
 
     display: flex;
+    /* padding-left: 15%;
+    padding-right: 15%; */
+    padding: 2% 15% 2% 15%;
+    justify-content: space-between;
 }
 
 .topnav {
     overflow: hidden;
+    
   }
   
   .topnav a {
@@ -24,7 +29,9 @@
     text-align: center;
     padding: 14px 16px;
     text-decoration: none;
-    font-size: 17px;
+    font-size: 16px;
+    /* font-family: 'Courier New', Courier, monospace; */
+    font-family: 'Open Sans', sans-serif;
   }
   
   .topnav a:hover {
