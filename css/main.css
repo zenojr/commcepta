@@ -1,0 +1,42 @@
+.logo_menu img {
+    width: 11em;
+    padding: 15px 0px 15px 150px;
+}
+
+.topo {
+    /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#4dd2d2+0,092331+100 */
+    background: #4dd2d2; /* Old browsers */
+    background: -moz-linear-gradient(left,  #4dd2d2 0%, #092331 100%); /* FF3.6-15 */
+    background: -webkit-linear-gradient(left,  #4dd2d2 0%,#092331 100%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to right,  #4dd2d2 0%,#092331 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#4dd2d2', endColorstr='#092331',GradientType=1 ); /* IE6-9 */
+
+    display: flex;
+}
+
+.topnav {
+    overflow: hidden;
+  }
+  
+  .topnav a {
+    float: left;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+  }
+  
+  .topnav a:hover {
+    background-color: #ddd;
+    color: black;
+  }
+  
+  .topnav a.active {
+    background-color: #4CAF50;
+    color: white;
+  }
+  
+  .topnav-right {
+    float: right;
+  }
