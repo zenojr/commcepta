@@ -23,6 +23,79 @@
                 </div>
             </nav>
         </section>
+        <section class="pannel_func">
+            <div class="selected_panel">
+                <div class="avatar">
+                    <img src="img/funcionarios/funcionario01.jpg" alt="Avatar">
+                </div>
+                <div class="avatar_description">
+                    <ul class="label_avatar_principal">
+                        <li>NOME:</li>
+                        <li>CARGO:</li>
+                        <li>IDADE:</li>
+                    </ul>
+                    <ul class="data_avatar_principal">
+                        <li> <b>Alberto </b></li>
+                        <li>42</li>
+                        <li>Presidente</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="funcionarios_container">
+                <div class="funcionarios_cards">
+                    <div class="img_badge">
+                            <span>1</span>
+                    </div>
+                    <div class="avatar">
+                        <img src="img/funcionarios/funcionario01.jpg" alt="Avatar">
+                    </div>
+                    <div class="avatar_description">
+                        <ul class="data_avatar">
+                            <li>Alberto</li>
+                            <li>Presidente</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="funcionarios_cards">
+                    <div class="avatar">
+                        <img src="img/funcionarios/funcionario01.jpg" alt="Avatar">
+                    </div>
+                    <div class="avatar_description">
+                        <ul class="data_avatar">
+                            <li>Alberto</li>
+                            <li>Presidente</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="funcionarios_cards">
+                    <div class="avatar">
+                        <img src="img/funcionarios/funcionario01.jpg" alt="Avatar">
+                    </div>
+                    <div class="avatar_description">
+                        <ul class="data_avatar">
+                            <li>Alberto</li>
+                            <li>Presidente</li>
+                        </ul>
+                    </div>
+                </div>
+                
+            </div>
+        </section>
     </div>
 </body>
+
+<!-- <script>
+        var myJSON = 'data/dados.json';
+        var myObj = JSON.parse(myJSON);
+        document.getElementById("teste").innerHTML = myObj[0];
+</script> -->
+
+<script>
+let data = data/dados.json;
+let newData = JSON.parse(data);
+console.log(newData);
+
+</script>
+
 </html>
