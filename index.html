@@ -35,7 +35,7 @@
                         <li>IDADE:</li>
                     </ul>
                     <ul class="data_avatar_principal">
-                        <li> <b>Alberto </b></li>
+                        <li id="alberto"></li>
                         <li>42</li>
                         <li>Presidente</li>
                     </ul>
@@ -51,12 +51,15 @@
                     </div>
                     <div class="avatar_description">
                         <ul class="data_avatar">
-                            <li>Alberto</li>
+                            <li id="alberto">Alberto</li>
                             <li>Presidente</li>
                         </ul>
                     </div>
                 </div>
                 <div class="funcionarios_cards">
+                        <div class="img_badge">
+                                <span>1</span>
+                        </div>
                     <div class="avatar">
                         <img src="img/funcionarios/funcionario01.jpg" alt="Avatar">
                     </div>
@@ -69,6 +72,9 @@
                 </div>
                 
                 <div class="funcionarios_cards">
+                        <div class="img_badge">
+                                <span>1</span>
+                        </div>
                     <div class="avatar">
                         <img src="img/funcionarios/funcionario01.jpg" alt="Avatar">
                     </div>
@@ -79,22 +85,36 @@
                         </ul>
                     </div>
                 </div>
-                
+
+               
+
             </div>
         </section>
     </div>
+
+    
+
 </body>
 
-<!-- <script>
-        var myJSON = 'data/dados.json';
-        var myObj = JSON.parse(myJSON);
-        document.getElementById("teste").innerHTML = myObj[0];
-</script> -->
 
 <script>
-let data = data/dados.json;
-let newData = JSON.parse(data);
-console.log(newData);
+
+function readFile(file, callback) {
+    var rawFile = new XMLHttpRequest();
+    rawFile.overrideMimeType("application/json");
+    rawFile.open("GET", file, true);
+    rawFile.onreadystatechange = function() {
+        if ( rawFile.readyState == 4 && rawFile.status == "200" ) {
+            callback( rawFile.responseText );
+        }
+    }
+    rawFile.send(null);
+}
+
+readFile( "/data/dados.json", function(text){
+    var data = JSON.parse(text);
+    console.log(data);
+});
 
 </script>
 

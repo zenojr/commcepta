@@ -85,7 +85,7 @@ body {
 
   .funcionarios_cards {
     display: flex;
-    
+    position: relative;
     margin-top: 20px; 
     
     height: 160px;
@@ -117,12 +117,12 @@ body {
     height: 30px;
     background-color: rgba(77, 210, 210, 1);
     border-radius: 50%;
-    z-index: 1;
+    
     justify-content: center;
     display: flex;
-    position: fixed;
-    margin-left: 8%;
-    margin-top: 2%;
+    position: absolute;
+    margin-left: 30%;
+    margin-top: 5%;
   }
 
   .img_badge span {
