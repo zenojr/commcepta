@@ -1,63 +1,54 @@
-  { 
-    "id": 1,
-    "foto": "foto-alberto.jpg",
-    "nome": "Alberto",
-    "cargo": "Presidente",
-    "idade": 20 
-  },
-  { 
-    "id": 2,
-    "foto": "foto-bruno.jpg",
-    "nome": "Bruno",
-    "cargo": "Diretor",
-    "idade": 21 
-  },
-  { 
-    "id": 3,
-    "foto": "foto-helena.jpg",
-    "nome": "Helena",
-    "cargo": "Gerente",
-    "idade": 22
-  },
-  { 
-    "id": 4,
-    "foto": "foto-fernanda.jpg",
-    "nome": "Fernanda",
-    "cargo": "Desenvolvedor",
-    "idade": 23
-  },
-  { 
-    "id": 5,
-    "foto": "foto-diego.jpg",
-    "nome": "Diego",
-    "cargo": "Desenvolvedor",
-    "idade": 24
-  },
-  { 
-    "id": 6,
-    "foto": "foto-iris.jpg",
-    "nome": "Iris",
-    "cargo": "Desenvolvedor",
-    "idade": 25 
-  },
-  { 
-    "id": 7,
-    "foto": "foto-hugo.jpg",
-    "nome": "Hugo",
-    "cargo": "Desenvolvedor",
-    "idade": 26 
-  },
-  { 
-    "id": 8,
-    "foto": "foto-gustavo.jpg",
-    "nome": "Gustavo",
-    "cargo": "Desenvolvedor",
-    "idade": 27
-  },
-  { 
-    "id": 9,
-    "foto": "foto-gabriel.jpg",
-    "nome": "Gabriel",
-    "cargo": "Desenvolvedor",
-    "idade": 28
+
+function readFile(file, callback) {
+  var rawFile = new XMLHttpRequest();
+  rawFile.overrideMimeType("application/json");
+  rawFile.open("GET", file, true);
+  rawFile.onreadystatechange = function() {
+      if ( rawFile.readyState == 4 && rawFile.status == "200" ) {
+          callback( rawFile.responseText );
+      }
   }
+  rawFile.send(null);
+}
+
+readFile( "/data/dados.json", function(text){
+  var data = JSON.parse(text);
+  console.log(data);
+  document.getElementById("nome_principal").innerHTML= "Nome: "  + data[0].nome;
+  document.getElementById("cargo_principal").innerHTML= "Cargo: "  + data[0].cargo;
+  document.getElementById("idade_principal").innerHTML= "Idade: "  + data[0].idade;
+  document.getElementById("foto_principal").innerHTML= `<div class="avatar">
+  <img id="foto_principal" src="img/funcionarios/` + data[0].foto + `" alt="Avatar"></div>`
+  data.forEach(element => {
+    
+    
+    var card = document.createElement('div');
+    card.className = "funcionarios_cards"
+  
+    card.innerHTML =  `<div class="img_badge"> <span>` + element.id + 
+    `</span></div><div onclick="clickAvatar(` + element.id +`)" class="avatar"><img src=img/funcionarios/` + element.foto + `></div><div class="avatar_description"><ul class="data_avatar"><li>` + element.nome + `</li><li>` + element.cargo + `</ul></div><div>` 
+    
+    document.getElementById("funcionarios_container").appendChild(card);
+  });
+
+
+});
+
+
+document.getElementById("demo").innerHTML = cars[0];
+
+
+function clickAvatar(id) {
+  readFile( "/data/dados.json", function(text){
+    var data = JSON.parse(text);
+      
+    idOut = id - 1;
+    document.getElementById("nome_principal").innerHTML= "Nome: "  + data[idOut].nome;
+    document.getElementById("cargo_principal").innerHTML= "Cargo: "  + data[idOut].cargo;
+    document.getElementById("idade_principal").innerHTML= "Idade: "  + data[idOut].idade;
+    document.getElementById("foto_principal").innerHTML= `<div class="avatar">
+    <img id="foto_principal" src="img/funcionarios/` + data[idOut].foto + `" alt="Avatar"></div>`
+  
+  });
+}
+

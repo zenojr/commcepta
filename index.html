@@ -25,8 +25,8 @@
         </section>
         <section class="pannel_func">
             <div class="selected_panel">
-                <div class="avatar">
-                    <img src="img/funcionarios/funcionario01.jpg" alt="Avatar">
+                <div id="foto_principal" class="avatar">
+                    
                 </div>
                 <div class="avatar_description">
                     <ul class="label_avatar_principal">
@@ -35,59 +35,16 @@
                         <li>IDADE:</li>
                     </ul>
                     <ul class="data_avatar_principal">
-                        <li id="alberto"></li>
-                        <li>42</li>
-                        <li>Presidente</li>
+                        <li id="nome_principal"></li>
+                        <li id="cargo_principal"></li>
+                        <li id="idade_principal"></li>
                     </ul>
                 </div>
             </div>
-            <div class="funcionarios_container">
-                <div class="funcionarios_cards">
-                    <div class="img_badge">
-                            <span>1</span>
-                    </div>
-                    <div class="avatar">
-                        <img src="img/funcionarios/funcionario01.jpg" alt="Avatar">
-                    </div>
-                    <div class="avatar_description">
-                        <ul class="data_avatar">
-                            <li id="alberto">Alberto</li>
-                            <li>Presidente</li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="funcionarios_cards">
-                        <div class="img_badge">
-                                <span>1</span>
-                        </div>
-                    <div class="avatar">
-                        <img src="img/funcionarios/funcionario01.jpg" alt="Avatar">
-                    </div>
-                    <div class="avatar_description">
-                        <ul class="data_avatar">
-                            <li>Alberto</li>
-                            <li>Presidente</li>
-                        </ul>
-                    </div>
-                </div>
+            <div id="funcionarios_container">
                 
-                <div class="funcionarios_cards">
-                        <div class="img_badge">
-                                <span>1</span>
-                        </div>
-                    <div class="avatar">
-                        <img src="img/funcionarios/funcionario01.jpg" alt="Avatar">
-                    </div>
-                    <div class="avatar_description">
-                        <ul class="data_avatar">
-                            <li>Alberto</li>
-                            <li>Presidente</li>
-                        </ul>
-                    </div>
-                </div>
-
-               
-
+                
+                
             </div>
         </section>
     </div>
@@ -97,25 +54,7 @@
 </body>
 
 
-<script>
+<script src="/js/main.js"></script>
 
-function readFile(file, callback) {
-    var rawFile = new XMLHttpRequest();
-    rawFile.overrideMimeType("application/json");
-    rawFile.open("GET", file, true);
-    rawFile.onreadystatechange = function() {
-        if ( rawFile.readyState == 4 && rawFile.status == "200" ) {
-            callback( rawFile.responseText );
-        }
-    }
-    rawFile.send(null);
-}
-
-readFile( "/data/dados.json", function(text){
-    var data = JSON.parse(text);
-    console.log(data);
-});
-
-</script>
 
 </html>
