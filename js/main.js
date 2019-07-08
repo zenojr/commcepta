@@ -14,9 +14,9 @@ function readFile(file, callback) {
 readFile( "/data/dados.json", function(text){
   var data = JSON.parse(text);
   console.log(data);
-  document.getElementById("nome_principal").innerHTML= "Nome: "  + data[0].nome;
-  document.getElementById("cargo_principal").innerHTML= "Cargo: "  + data[0].cargo;
-  document.getElementById("idade_principal").innerHTML= "Idade: "  + data[0].idade;
+  document.getElementById("nome_principal").innerHTML=  data[0].nome;
+  document.getElementById("cargo_principal").innerHTML=   data[0].cargo;
+  document.getElementById("idade_principal").innerHTML=    data[0].idade;
   document.getElementById("foto_principal").innerHTML= `<div class="avatar">
   <img id="foto_principal" src="img/funcionarios/` + data[0].foto + `" alt="Avatar"></div>`
   data.forEach(element => {
@@ -43,9 +43,9 @@ function clickAvatar(id) {
     var data = JSON.parse(text);
       
     idOut = id - 1;
-    document.getElementById("nome_principal").innerHTML= "Nome: "  + data[idOut].nome;
-    document.getElementById("cargo_principal").innerHTML= "Cargo: "  + data[idOut].cargo;
-    document.getElementById("idade_principal").innerHTML= "Idade: "  + data[idOut].idade;
+    document.getElementById("nome_principal").innerHTML=  data[idOut].nome;
+    document.getElementById("cargo_principal").innerHTML= data[idOut].cargo;
+    document.getElementById("idade_principal").innerHTML= data[idOut].idade;
     document.getElementById("foto_principal").innerHTML= `<div class="avatar">
     <img id="foto_principal" src="img/funcionarios/` + data[idOut].foto + `" alt="Avatar"></div>`
   
